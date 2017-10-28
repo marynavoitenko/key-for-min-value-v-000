@@ -4,7 +4,7 @@
 def key_for_min_value(name_hash)
   return nil if name_hash.empty?
   values = []
-  name_hash.collect { |key, value| values << value}
+  values = name_hash.collect { |key, value| value}
   min_value = values[0]
   i = 0
   while i < values.length
