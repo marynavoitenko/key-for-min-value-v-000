@@ -3,12 +3,13 @@
 
 def key_for_min_value(name_hash)
   return nil if name_hash.empty?
-  min_key = ""
-  min_value = 0
-  name_hash.each do |key, value|
-    if value < min_value
-      min_value = value
-    end
+  values = []
+  name_hash.collect { |key, value| values << value}
+  min_value = values[0]
+  i = 0
+  while i < values.length
+    min_value = values[i] if values[i] < min_value
   end
-  min_value
+
+  name_hash.key(min_value)
 end
